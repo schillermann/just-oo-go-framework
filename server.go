@@ -5,10 +5,11 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/schillermann/just-oo-go-framework/hello"
+	"schillermann/just-oo-go-framework/hello"
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Accept", "text/html")
 	io.WriteString(w, hello.Hello())
 }
 
